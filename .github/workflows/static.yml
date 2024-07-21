@@ -1,43 +1,74 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
-
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting Business - Aashutosh Aggarwal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            color: white;
+            text-align: center;
+        }
+        header {
+            padding: 2rem;
+        }
+        .profile-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid white;
+            margin-bottom: 1rem;
+        }
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #007BFF;
+            background-color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 400px;
+        }
+        .button:hover {
+            background-color: #e0e0e0;
+        }
+        footer {
+            margin-top: 2rem;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\aashutosh.aggarwal\Downloads\Untitled design.png" alt="Aashutosh Aggarwal" class="profile-image">
+        <h1 class="title">Strategy Leader & Advisor</h1>
+        <p class="subtitle">Transforming businesses with digital & strategic leadership</p>
+        <p><a href="mailto:aashutosh.agarwal@gmail.com" class="button">Unlock Path to Business Brilliance!</a></p>
+    </header>
+    <main>
+        <a href="#" class="button">For Consulting Tips</a>
+        <a href="#" class="button">Profile</a>
+        <a href="#" class="button">Workplace</a>
+    </main>
+    <footer>
+        <p>&copy; 2024 Stratash Consulting. All rights reserved.</p>
+    </footer>
+</body>
+</html>
